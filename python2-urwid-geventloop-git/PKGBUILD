@@ -7,25 +7,27 @@
 # information on Python packaging.
 
 # Maintainer: Your Name <youremail@domain.com>
+_modulename=urwid-geventloop
 pkgname=python2-urwid-geventloop
+pkgver=r8.d1152ae
 pkgrel=1
 pkgdesc="Event loop based on gevent for urwid."
 arch=('any')
 url="https://github.com/tck42/urwid-geventloop"
 license=('GPL')
-depends=('python2','python2-gevent')
+depends=('python2' 'python2-gevent' 'python2-urwid')
 options=(!emptydirs)
 source=('git+https://github.com/tck42/urwid-geventloop.git')
-#md5sums=()
+md5sums=('SKIP')
 
 pkgver() {
-  cd "$pkgname"
+  cd "$srcdir/${_modulename}"
   printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
 }
 
 package() {
-  cd "$srcdir/$pkgname-$pkgver"
-  python setup.py install --root="$pkgdir/" --optimize=1
+  cd "$srcdir/${_modulename}"
+  python2 setup.py install --root="$pkgdir/" --optimize=1
 }
 
 # vim:set ts=2 sw=2 et:
