@@ -8,7 +8,7 @@
 
 # Maintainer: Your Name <youremail@domain.com>
 _modulename=urwid-geventloop
-pkgname=python2-urwid-geventloop
+pkgname=python2-${_modulename}
 pkgver=r8.d1152ae
 pkgrel=1
 pkgdesc="Event loop based on gevent for urwid."
