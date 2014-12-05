@@ -1,7 +1,8 @@
 # Maintainer: Your Name <youremail@domain.com>
+_python=python2
 _modulename=urwid-geventloop
-pkgname=python2-${_modulename}-git
-pkgver=r8.d1152ae
+pkgname=${_python}-${_modulename}-git
+pkgver=r9.fd1bff3
 pkgrel=1
 pkgdesc="Event loop based on gevent for urwid."
 arch=('any')
@@ -9,7 +10,7 @@ url="https://github.com/tck42/urwid-geventloop"
 license=('BSD')
 depends=('python2' 'python2-gevent' 'python2-urwid')
 options=(!emptydirs)
-source=('git+https://github.com/tck42/urwid-geventloop.git')
+source=('git+https://github.com/what-studio/urwid-geventloop.git')
 md5sums=('SKIP')
 
 pkgver() {
@@ -19,7 +20,7 @@ pkgver() {
 
 package() {
   cd "$srcdir/${_modulename}"
-  python2 setup.py install --root="$pkgdir/" --optimize=1
+  ${_python} setup.py install --root="$pkgdir/" --optimize=1
 }
 
 # vim:set ts=2 sw=2 et:
