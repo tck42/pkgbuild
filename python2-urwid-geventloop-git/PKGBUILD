@@ -1,11 +1,3 @@
-# This is an example PKGBUILD file. Use this as a start to creating your own,
-# and remove these comments. For more information, see 'man PKGBUILD'.
-# NOTE: Please fill out the license field for your package! If it is unknown,
-# then please put 'unknown'.
-
-# See http://wiki.archlinux.org/index.php/Python_Package_Guidelines for more
-# information on Python packaging.
-
 # Maintainer: Your Name <youremail@domain.com>
 _modulename=urwid-geventloop
 pkgname=python2-${_modulename}-git
@@ -14,7 +6,7 @@ pkgrel=1
 pkgdesc="Event loop based on gevent for urwid."
 arch=('any')
 url="https://github.com/tck42/urwid-geventloop"
-license=('GPL')
+license=('BSD')
 depends=('python2' 'python2-gevent' 'python2-urwid')
 options=(!emptydirs)
 source=('git+https://github.com/tck42/urwid-geventloop.git')
